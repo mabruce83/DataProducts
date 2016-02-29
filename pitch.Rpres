@@ -1,0 +1,37 @@
+Portfolio Backtester
+========================================================
+![Title IMG](title_img.png)
+
+Asset Allocation
+========================================================
+- Asset classes which are not perfectly correlated perform differently over different market conditions.
+- Diversifying your investable capital should lower risk and possibly increase return over the long term.
+
+
+Purpose of the Tool
+========================================================
+
+- The portfolio backtest tool is used to simulate past returns with different asset allocation strategies.
+- Simulation uses $1000 invested in 1971 through 2015.
+- The purpose of the tool is to help you overfit your asset allocation to the historical return data, resulting in better out of sample performance
+
+Instructions
+========================================================
+- Enter allocations to each asset class in the appropriate box along left side. 
+- All allocations should total to 100%. 
+- Results are shown on right side of tool.
+- Results are based on yearly rebalancing. 
+- Simulation based on historical performance of the following mutual funds: VTSMX, VGTSX, VFITX, VGSIX, PCRIX. 
+
+Example
+========================================================
+Example using equal allocation amounts (20% each):
+```{r, echo=FALSE}
+acct_val <- c(1000.000, 1002.085, 1002.551, 1001.275, 1003.397, 1005.041, 1005.972, 1007.607, 1009.610, 1011.406, 1011.091, 1012.660, 1014.593, 1015.454, 1018.320, 1020.664, 1021.541, 1023.278, 1025.252, 1025.074, 1027.265, 1027.872, 1029.652, 1029.855, 1032.022, 1033.751, 1034.918, 1035.080, 1036.443, 1037.480, 1036.931, 1037.383, 1040.278, 1042.023, 1043.195, 1044.808, 1045.609, 1042.510, 1045.288, 1047.128, 1047.067, 1048.322, 1049.009, 1049.525, 1048.978)
+year <- 1971:2015
+```
+
+```{r, echo=TRUE}
+
+plot(year,acct_val,type="b", main="Growth of $1000", xlab="Year", ylab="Value ($)")
+```
